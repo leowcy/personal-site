@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #2c1b47 0%, #ff6f61 50%, #f1c40f 100%);
-    /* Purple-orange-yellow */
+    background: #0a0a0a;
+    /* Near-black */
     font-family: 'Courier New', monospace;
     color: #fff;
     overflow-x: hidden;
@@ -16,8 +16,15 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    /* So it doesn’t block clicks */
     z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    background: #00e5ff;
+    /* Neon cyan */
 }
 
 .canvas {
@@ -27,7 +34,6 @@ body {
     text-align: center;
     position: relative;
     z-index: 1;
-    /* Above particles */
 }
 
 .header {
@@ -41,22 +47,22 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 4px solid #ff6f61;
+    border: 4px solid #00e5ff;
+    /* Neon cyan frame */
     margin-bottom: 20px;
-    box-shadow: 0 0 20px rgba(255, 111, 97, 0.8);
-    animation: bounce 2s infinite;
-    /* ENFP bounce */
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
+    animation: pulse 2s infinite;
+    /* Subtle glow pulse */
 }
 
 h1 {
     font-size: 4.5em;
-    background: linear-gradient(90deg, #ff6f61, #f1c40f, #e91e63);
-    /* Gradient text */
-    -webkit-background-clip: text;
-    color: transparent;
+    color: #ff007a;
+    /* Neon pink */
     text-transform: uppercase;
     letter-spacing: 6px;
     margin: 0;
+    text-shadow: 0 0 15px rgba(255, 0, 122, 0.7);
     animation: glitch 1.5s infinite;
 }
 
@@ -75,21 +81,22 @@ h1 {
 .vibes p {
     font-size: 1.3em;
     color: #fff;
-    text-shadow: 0 0 5px rgba(241, 196, 15, 0.7);
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.7);
 }
 
 a {
-    color: #f1c40f;
+    color: #ff007a;
+    /* Neon pink */
     text-decoration: none;
-    border-bottom: 2px solid #f1c40f;
+    border-bottom: 2px solid #ff007a;
     padding-bottom: 2px;
     margin: 0 10px;
 }
 
 a:hover {
-    color: #e91e63;
-    /* Pink hover */
-    border-color: #e91e63;
+    color: #00e5ff;
+    /* Cyan hover */
+    border-color: #00e5ff;
 }
 
 .game-zone {
@@ -98,16 +105,17 @@ a:hover {
 
 #snakeCanvas {
     background: #111;
-    border: 3px solid #ff6f61;
+    border: 3px solid #ff007a;
+    /* Pink border */
     border-radius: 10px;
-    box-shadow: 0 0 25px rgba(255, 111, 97, 0.7);
+    box-shadow: 0 0 25px rgba(255, 0, 122, 0.7);
 }
 
 .game-zone p {
     font-size: 1.2em;
-    color: #f1c40f;
+    color: #00e5ff;
     margin-top: 10px;
-    text-shadow: 0 0 5px rgba(241, 196, 15, 0.5);
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.5);
 }
 
 /* Animations */
@@ -137,29 +145,18 @@ a:hover {
     }
 }
 
-@keyframes bounce {
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
+    }
 
-    0%,
-    20%,
-    50%,
-    80%,
+    50% {
+        box-shadow: 0 0 30px rgba(0, 229, 255, 1);
+    }
+
     100% {
-        transform: translateY(0);
+        box-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
     }
-
-    40% {
-        transform: translateY(-15px);
-    }
-
-    60% {
-        transform: translateY(-7px);
-    }
-}
-
-.particle {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.5;
 }
 
 @keyframes float {

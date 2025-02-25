@@ -13,9 +13,7 @@ function resetParticle(particle) {
   const size = Math.random() * 5 + 2;
   particle.style.width = `${size}px`;
   particle.style.height = `${size}px`;
-  particle.style.background = `rgba(${Math.random() * 255}, ${
-    Math.random() * 255
-  }, 255, 0.7)`;
+  particle.style.background = "#00e5ff"; /* Neon cyan */
   particle.style.left = `${Math.random() * 100}vw`;
   particle.style.top = `${Math.random() * 100}vh`;
   particle.style.animation = `float ${Math.random() * 5 + 3}s infinite`;
@@ -25,7 +23,7 @@ document.querySelectorAll(".particle").forEach((p) => {
   p.addEventListener("animationiteration", () => resetParticle(p));
 });
 
-// Snake game (unchanged below)
+// Snake game
 const canvas = document.getElementById("snakeCanvas");
 const ctx = canvas.getContext("2d");
 const scoreDisplay = document.getElementById("score");
@@ -40,12 +38,12 @@ function draw() {
   ctx.fillStyle = "#111";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#ff6f61";
+  ctx.fillStyle = "#ff007a"; /* Neon pink snake */
   snake.forEach((segment) => {
     ctx.fillRect(segment.x * 20, segment.y * 20, 18, 18);
   });
 
-  ctx.fillStyle = "#f1c40f";
+  ctx.fillStyle = "#00e5ff"; /* Cyan food */
   ctx.fillRect(food.x * 20, food.y * 20, 18, 18);
 
   const head = { x: snake[0].x + dx, y: snake[0].y + dy };
