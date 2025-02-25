@@ -6,21 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>leowcy</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="script.js" defer></script>
 </head>
 
 <body>
+    <div class="particles"></div> <!-- Particle layer -->
     <div class="canvas">
-        <h1>leowcy</h1>
-        <p>dreamer | coder | gamer | creator</p>
+        <div class="header">
+            <img src="avatar.png" alt="Leo’s Avatar" class="avatar">
+            <h1>leowcy</h1>
+        </div>
+        <p class="tagline">code. play. dream.</p>
         <div class="vibes">
-            <p>ENFP fuel: coding wild systems, dunking in 2K, and vloging the future.</p>
-            <p>peek my <a href="https://github.com/leowcy" target="_blank">code</a> or <a
-                    href="https://www.youtube.com/channel/UCh5PErLiHiHznlptJHdft2g" target="_blank">2K moves</a>.</p>
+            <p>ENFP chaos: crafting code, owning 2K, chasing films.</p>
+            <p><a href="https://github.com/leowcy" target="_blank">github</a> | <a
+                    href="https://www.youtube.com/channel/UCh5PErLiHiHznlptJHdft2g" target="_blank">youtube</a></p>
         </div>
         <div class="game-zone">
             <canvas id="snakeCanvas" width="400" height="400"></canvas>
-            <p>have fun</p>
+            <p>snake it up — score: <span id="score">0</span></p>
         </div>
     </div>
 </body>
